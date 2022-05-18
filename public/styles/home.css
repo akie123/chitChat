@@ -1,0 +1,121 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: lavender;
+}
+form{
+    width: 100%;
+    border: 2px rebeccapurple outset;
+}
+
+
+.pop{
+
+    padding-top: 1%;
+    padding-right: 55%;
+    text-align: left;
+    line-height: 2rem;
+
+
+    /*border-color: black;*/
+
+}
+.la{
+    margin: 0;
+}
+.navbar-dark .nav-item .nav-link {
+    color: black;
+    font-family: 'Source Serif 4', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.navbar-dark .navbar-brand {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+}
+
+.container-fluid {
+    padding: 3% 5% 5%;
+}
+
+.navbar {
+    padding: 0 0 0 0;
+}
+.pad{
+    padding-top: 18%;
+}
+
+.nav-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat"
+}
+
+.head-margin {
+    margin-top: 20px;
+    font-size: 2rem;
+    line-height: 1.5;
+    position: absolute;
+
+}
+
+.im {
+
+    width: 80%;
+
+
+}
+
+.but {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+@media (max-width: 1028px) {
+
+    .im {
+        padding-top: 50px;
+        position: static;
+        transform: rotate(0deg);
+        width: 30%;
+        display: none;
+    }
+    .head-margin{
+        display: none;
+    }
+
+}
+
+
+
+.bar{
+    padding-top: 10%;
+}
+.bu{
+    padding-top: 10%;
+    padding-bottom: 2%;
+}
+#join{
+    display: none;
+}
+#create{
+    display: none;
+}

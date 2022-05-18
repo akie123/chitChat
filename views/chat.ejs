@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>ChitChat </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Comforter&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Serif+4:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/234be40154.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/styles/index.css">
+
+
+</head>
+
+
+<body>
+
+<section id="chitchat">
+
+    <div class="container-fluid chat" >
+
+        <div class="card ">
+
+            <div class="p-list">
+
+
+                <div class="active" style="text-align: center">
+
+                    <h4>
+                        Active Members
+                    </h4>
+                    <hr>
+
+
+                </div>
+
+                <div class="members scrollbar-deep-purple bordered-deep-purple thin">
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="tex" style="text-align: center;">
+
+                <div class="header">
+
+                    <h4>Chat Room Id = 43563 (Share With Your Group)</h4>
+
+                </div>
+<!--                scrollbar-deep-purple bordered-deep-purple thin-->
+                <div id="scroll"class="msg scrollbar-deep-purple bordered-deep-purple thin">
+
+
+
+
+                </div>
+                <div class="write">
+
+                    <form method="post" >
+                    <div class="row">
+
+                        <div class="col-1" >
+
+                            <button id="send" type="submit" class="btn btn-dark"> <i   class="fas fa-paper-plane fa-fw"></i>Send</button>
+
+
+
+                        </div>
+                        <div class="col-11">
+
+                                <input type="text" class="form-control" id="msgg" aria-describedby="msg" placeholder="Type...">
+
+
+                        </div>
+
+
+
+                    </div>
+                    </form>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+</body>
+<script src = "/socket.io/socket.io.js"></script>
+<script src="/index.js" charset="utf-8"></script>
+</html>

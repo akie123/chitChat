@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>ChitChat </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Comforter&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Serif+4:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/234be40154.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/styles/home.css">
+
+
+</head>
+
+
+<body>
+
+<section id="chitchat">
+
+    <div class="container-fluid" id="c1">
+
+
+        <nav class="navbar navbar-expand-lg  navbar-dark">
+
+
+            <a class="navbar-brand col-brand" href=""> Chit-Chat </a>
+
+        </nav>
+        <div class="row bk">
+
+            <div class="col-lg-6  ">
+                <h1 class="head-margin"> Chit Chat - <span class="auto">  </span>   </h1>
+                <h5 class="pad">Join/Create room,Chat people from all over!!</h5>
+
+
+                <div class="row bu">
+                    <div class="col">
+                        <button type="button but" id="but-1" class="btn btn-dark btn-lg but">  Create Room </button>
+                    </div>
+                    <div class="col">
+                        <button type="button but" id="but-2" class="btn btn-dark btn-lg but">  Join Room </button>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="col-lg-6  ">
+                <img class="im" src="./images/happy-man-online-dating-via-laptop_74855-7495 (1).png" alt="im">
+            </div>
+
+        </div>
+        <div class="pop" id="create">
+
+            <div class="row">
+                <form>
+                    <div class="container-fluid">
+                        <div class="row la" >
+                            <button type="button" id="but-3" class="close" aria-label="Close" >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+
+                            <input type="email" class="form-control" id="name" placeholder="ABC">
+                        </div>
+                        <div class="row la">
+                            <button type="button" id="but-4" class="close" aria-label="Close" >
+                                <i class="fas fa-arrow-right "></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+        <div class="pop" id="join">
+
+            <div class="row" >
+                <form>
+                    <div class="container-fluid">
+                        <div class="row la">
+                            <button type="button" id="but-5" class="close" aria-label="Close" >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+
+                            <input type="text" class="form-control" id="name" placeholder="ABC">
+                        </div>
+                        <div class="form-group">
+                            <label for="id">Enter Room Id</label>
+
+                            <input type="text" class="form-control" id="id" placeholder="1234">
+                        </div>
+                        <div class="row la">
+                            <button type="button" id="but-6" class="close" aria-label="Close" >
+                                <i class="fas fa-arrow-right "></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script src="home.js" charset="utf-8"></script>
+
+
+
+</body>
+
+</html>
