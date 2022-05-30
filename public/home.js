@@ -45,7 +45,7 @@ e.preventDefault();
 
       });
       let content= await rawResponse.json();
-      console.log(content.available)
+
       if(content.available==true) {
 
           break;
@@ -66,8 +66,27 @@ document.getElementById('but-6').addEventListener("click",async (e)=>{
     let user=document.getElementById('name2').value;
     let room=document.getElementById('id2').value;
 
+    const rawResponse = await fetch('/chitChat', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({flag:"checkSlot",slot:room})
 
+    });
+
+    let content= await rawResponse.json();
+
+
+
+    if(content.available==true)
     window.location.href=`chitChat/${user}/${room}`
+    else
+    {
+        window.alert('Room not exist,Please check entered room number')
+        window.location.href='chitChat'
+    }
 
 
 })

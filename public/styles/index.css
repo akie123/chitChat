@@ -267,3 +267,9 @@ p{
 .write .row{
     margin: 0;
 }
+.center{
+    text-align: center;
+}
+.left{
+    text-align: left;
+}

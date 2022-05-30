@@ -4,6 +4,8 @@ app.use(express.static('public'));
 app.set('view engine','ejs');
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+let cors = require('cors')
+app.use(cors())
 const moment=require('moment');
 
 const http = require('http');
@@ -28,8 +30,8 @@ mongoose.connect(dbURI,{useNewUrlParser: true, useUnifiedTopology: true})
     .then((result)=>{
 
         console.log('connected to mongodb');
-        server.listen(3000, () => {
-            console.log('listening on :3000');
+        server.listen( process.env.PORT ||3000, () => {
+            console.log('server listening');
         });
 
     })
@@ -60,6 +62,25 @@ app.post('/chitChat',(req,res)=>{
     })
 
     }
+    if(req.body.flag=='checkSlot')
+    {
+
+        Data.find({roomc:req.body.slot},(err,data)=>{
+
+            if(data.length!=0)
+
+                res.json({
+                    available:true
+                })
+
+            else
+            {
+                res.json({
+                    available:false
+                })
+            }
+        })
+    }
 })
 app.get('/chitChat/:user/:room',(req,res)=>{
 
@@ -73,11 +94,15 @@ io.on('connection',(socket)=>{
        model.save((err,res)=>{
          if(res)
          {
-             socket.join(room1);
+             Data.find({roomc:room1},(err1,res1)=>{
+                 socket.join(room1);
 
-             console.log(socket.id);
-             socket.broadcast.to(room1).emit('message1',`${user} joined chat`,moment().format('h:mm a'))
-             socket.emit('message1','Welcome to ChitChat!',moment().format('h:mm a'))
+                 console.log(socket.id);
+                 socket.broadcast.to(room1).emit('message1',`${user} joined chat`,moment().format('h:mm a'))
+                 socket.emit('message1','Welcome to ChitChat!',moment().format('h:mm a'))
+                 io.to(room1).emit('people',res1);
+             })
+
          }
        })
 
@@ -85,9 +110,10 @@ io.on('connection',(socket)=>{
    })
     socket.on('msg',(msg,user)=>{
         Data.find({idc:socket.id},(err,data)=>{
-            if(data) {
-                console.log(data[0].roomc)
-                io.to(data[0].roomc.toString()).emit('message', msg, moment().format('h:mm a'), user);
+            if(data.length!=0) {
+                socket.broadcast.to(data[0].roomc.toString()).emit('message2', msg, moment().format('h:mm a'), user);
+                socket.emit('message',msg,moment().format('h:mm a'),user)
+
 
             }
         })
@@ -98,13 +124,29 @@ io.on('connection',(socket)=>{
 
        Data.find({idc:socket.id},(err,res)=>{
 
-           Data.deleteOne({id:socket.id},(err,res1)=>{
+           Data.deleteOne({id:socket.id},(err2,res1)=>{
+
+               try {
+                   if(res.length!=0) {
+                       console.log(res)
+                       let room = res[0]['roomc'];
+                       socket.broadcast.to(room.toString()).emit('message1',`${res[0].name} left the chat`,moment().format('h:mm a'))
+                       Data.find({roomc:room},(err3,data3)=>{
+                           io.to(room.toString()).emit('people',data3);
+                       })
+                   }
+               }
+               catch(err){
+                   console.log(err)
+               }
+
+
 
 
            })
        })
 
-        console.log('disconnected')
+
     })
 })
 
