@@ -124,14 +124,15 @@ io.on('connection',(socket)=>{
 
        Data.find({idc:socket.id},(err,res)=>{
 
-           Data.deleteOne({id:socket.id},(err2,res1)=>{
+           Data.deleteOne({idc:socket.id},(err2,res1)=>{
 
                try {
                    if(res.length!=0) {
-                       console.log(res)
+
                        let room = res[0]['roomc'];
                        socket.broadcast.to(room.toString()).emit('message1',`${res[0].name} left the chat`,moment().format('h:mm a'))
                        Data.find({roomc:room},(err3,data3)=>{
+
                            io.to(room.toString()).emit('people',data3);
                        })
                    }
