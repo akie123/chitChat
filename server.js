@@ -17,14 +17,7 @@ const dbURI="mongodb+srv://aalhad:aalhad123@aalhad123.2dfdc.mongodb.net/ChitChat
 const Data=require('./models/data');
 
 
- let func=function(){
-     return  Math.floor(Math.random() * 100000) + 10000;
- }
- let check=function( a){
 
-     
-
-}
 
 mongoose.connect(dbURI,{useNewUrlParser: true, useUnifiedTopology: true})
     .then((result)=>{
