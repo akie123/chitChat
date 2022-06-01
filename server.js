@@ -33,7 +33,7 @@ mongoose.connect(dbURI,{useNewUrlParser: true, useUnifiedTopology: true})
     })
 
 
-app.get('/chitChat',(req,res)=>{
+app.get('/',(req,res)=>{
 
     res.render('index');
 })

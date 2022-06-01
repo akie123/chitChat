@@ -85,7 +85,7 @@ document.getElementById('but-6').addEventListener("click",async (e)=>{
     else
     {
         window.alert('Room not exist,Please check entered room number')
-        window.location.href='chitChat'
+        window.location.href='/'
     }
 
 
